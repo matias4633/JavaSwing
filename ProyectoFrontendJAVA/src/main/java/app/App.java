@@ -2,9 +2,9 @@
 
 package app;
 
-import app.login.LoginTemplate;
+import client.login.LoginTemplate;
 import javax.swing.SwingUtilities;
-import vistaPrincipal.VistaPrincipalTemplate;
+import client.login.vistaPrincipal.VistaPrincipalTemplate;
 
 
 public class App {

@@ -1,5 +1,6 @@
-package app.login;
+package client.login;
 
+import app.services.ObjGraficoService;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -41,8 +42,48 @@ public class LoginTemplate extends JFrame {
 
     public LoginTemplate() {
         //super("Login Usuario");
-        this.generarFuentes();
+        generarFuentes();
+        
+        
 
+        crearObjetosDecoradores();
+       
+        crearJPanels();
+
+        crearJLabels();
+
+        crearJButtons();
+
+        crearJTextField();
+
+        crearJPasswordField();
+
+        crearJComboBox();
+
+        crearJCheckBox();
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(1000, 500);
+        setLocationRelativeTo(this);
+        setUndecorated(true);
+        //Borra la barra superior, los botones por defecto y la opcion de agrandar
+        //y mover la ventana. Se puede borrar super() ya que eso solo enviaba el nombre a la ventana.
+        setLayout(null);
+        setVisible(true);
+
+    }
+
+    public void generarFuentes() {
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        try {
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Forte.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Rockwell-ExtraBold.otf")));
+        } catch (FontFormatException | IOException ex) {
+            ex.printStackTrace(System.out);
+        }
+    }
+
+    public void crearObjetosDecoradores() {
         colorPrincipal = new Color(60, 78, 120);
         colorGrisOscuro = new Color(80, 80, 80);
         colorNegroTransparente = new Color(30, 30, 30, 30);
@@ -64,23 +105,60 @@ public class LoginTemplate extends JFrame {
         iYoutube1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\youtube1.png");
         iSvg1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\imagen1.png");
         iCerrar = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\cerrar.png");
-        /*
-        INICIO PANEL IZQUIERDO
-         */
-        pIzquierda = new JPanel();
-        pIzquierda.setSize(600, 500);
-        pIzquierda.setLocation(0, 0);
-        pIzquierda.setBackground(Color.WHITE);
-        pIzquierda.setLayout(null);
+
+    }
+
+    public void crearJPanels() {
+        ObjGraficoService servicio = ObjGraficoService.getService();
+        pIzquierda= servicio.crearJPanel(600,500,0,0,Color.WHITE);
         this.add(pIzquierda);
+        pDerecha= servicio.crearJPanel(400, 500, 600, 0, Color.WHITE);
+        this.add(pDerecha);
+    }
 
-        lTituloApp = new JLabel();
-        lTituloApp.setText("Login de Usuario");
-        lTituloApp.setFont(fontPrincipal);
-        lTituloApp.setBounds(100, 20, 220, 30);
-        lTituloApp.setForeground(Color.WHITE);
+    public void crearJLabels() {
+        ObjGraficoService servicio = ObjGraficoService.getService();
+        
+        lTituloApp= servicio.crearJLabel("Login de Usuario", fontPrincipal, 100, 20, 220, 30, Color.WHITE);
         pIzquierda.add(lTituloApp);
+        
+        lFacebook = servicio.crearJLabel(iFacebook1, 20, pIzquierda.getHeight()-50, 30, 30, cMano);
+        pIzquierda.add(lFacebook);
 
+        lTwitter= servicio.crearJLabel(iTwitter1, 60, pIzquierda.getHeight()-50, 30, 30, cMano);
+        pIzquierda.add(lTwitter);
+        
+        lYoutube = servicio.crearJLabel(iYoutube1, 100, pIzquierda.getHeight()-50, 30, 30, cMano);
+        pIzquierda.add(lYoutube);
+
+        lLogo= servicio.crearJLabel(iLogo, 50, 20, 40, 40, cMano);
+        pIzquierda.add(lLogo);
+
+        lSvg1= servicio.crearJLabel(iSvg1, 100, 100, 500, 345, cMano);
+        pIzquierda.add(lSvg1);
+
+        lFondo = servicio.crearJLabel(iFondo, 0, 0, pIzquierda.getWidth(), pIzquierda.getHeight(), cMano);
+        pIzquierda.add(lFondo);
+        //Es importante ponerlo al final, JAVA va encimando los labels en el eje z, hacia el fondo de la pantalla.
+
+        lEslogan = servicio.crearJLabel("El mejor experto también fue un día aprendiz.", fontSubtitulo, ((pDerecha.getWidth() - 350) / 2), 40, 350, 20, colorGrisOscuro);
+        pDerecha.add(lEslogan);
+
+        lTituloLogin = servicio.crearJLabel("Registra tus Datos", fontTitulo, (pDerecha.getWidth() - 150) / 2, 70, 150, 30, colorGrisOscuro);
+        pDerecha.add(lTituloLogin);
+        
+        lNotificaciones = servicio.crearJLabel("¿Recibir Notificaciones?", fontSubtitulo, (pDerecha.getWidth()-160)/2,400, 160, 40, colorGrisOscuro);
+        pDerecha.add(lNotificaciones);
+
+        lUsuario = servicio.crearJLabel(iUsuario2, 40, 130, 30, 30, cMano);
+        pDerecha.add(lUsuario);
+
+        lClave = servicio.crearJLabel(iClave2, 40, 270, 30, 30, cMano);
+        pDerecha.add(lClave);
+
+    }
+
+    public void crearJButtons() {
         bOpcion1 = new JButton();
         bOpcion2 = new JButton();
         bOpcion3 = new JButton();
@@ -113,97 +191,43 @@ public class LoginTemplate extends JFrame {
         pIzquierda.add(bOpcion2);
         pIzquierda.add(bOpcion3);
 
-        lFacebook = new JLabel();
-        lFacebook.setBounds(20, pIzquierda.getHeight() - 50, 30, 30);
+        bEntrar = new JButton("Entrar");
+        bEntrar.setSize(250, 45);
+        bEntrar.setLocation((pDerecha.getWidth() - bEntrar.getWidth()) / 2, 320);
+        bEntrar.setBackground(colorPrincipal);
+        bEntrar.setForeground(Color.WHITE);//Color de la letra.
+        bEntrar.setFocusable(false);//Quita el recuadro de las letras.
+        bEntrar.setCursor(cMano);
+        pDerecha.add(bEntrar);
+
+        bCerrar = new JButton();
+        bCerrar.setSize(30, 30);
+        bCerrar.setLocation(pDerecha.getWidth() - bCerrar.getWidth(), 10);
+        bCerrar.setBackground(Color.WHITE);
+        //bCerrar.setForeground(Color.WHITE);
+        bCerrar.setFocusable(false);
+        bCerrar.setCursor(cMano);
         iDimAux = new ImageIcon(
-                iFacebook1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
         );
-        lFacebook.setIcon(iDimAux);
-        lFacebook.setCursor(cMano);
-        pIzquierda.add(lFacebook);
+        bCerrar.setIcon(iDimAux);
+        bCerrar.setBorder(null);
+        bCerrar.setFocusable(false);
+        bCerrar.setContentAreaFilled(false);
 
-        lTwitter = new JLabel();
-        lTwitter.setBounds(60, pIzquierda.getHeight() - 50, 30, 30);
-        iDimAux = new ImageIcon(
-                iTwitter1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        lTwitter.setIcon(iDimAux);
-        lTwitter.setCursor(cMano);
-        pIzquierda.add(lTwitter);
+        pDerecha.add(bCerrar);
 
-        lYoutube = new JLabel();
-        lYoutube.setBounds(100, pIzquierda.getHeight() - 50, 30, 30);
-        iDimAux = new ImageIcon(
-                iYoutube1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        lYoutube.setIcon(iDimAux);
-        lYoutube.setCursor(cMano);
-        pIzquierda.add(lYoutube);
+        bRegistrarse = new JButton("Registrarse");
+        bRegistrarse.setSize(200, 30);
+        bRegistrarse.setLocation(pDerecha.getWidth() - bRegistrarse.getWidth(), pDerecha.getHeight() - bRegistrarse.getHeight());
+        bRegistrarse.setBackground(colorPrincipal);
+        bRegistrarse.setForeground(Color.WHITE);
+        bRegistrarse.setFocusable(false);
+        bRegistrarse.setCursor(cMano);
+        pDerecha.add(bRegistrarse);
+    }
 
-        lLogo = new JLabel();
-        lLogo.setBounds(50, 20, 40, 40);
-        iDimAux = new ImageIcon(
-                iLogo.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)
-        );
-        lLogo.setIcon(iDimAux);
-        pIzquierda.add(lLogo);
-
-        lSvg1 = new JLabel();
-        lSvg1.setBounds(100, 100, 500, 345);
-        iDimAux = new ImageIcon(
-                iSvg1.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING)
-        );
-        lSvg1.setIcon(iDimAux);
-        pIzquierda.add(lSvg1);
-
-        lFondo = new JLabel();
-        lFondo.setSize(pIzquierda.getWidth(), pIzquierda.getHeight());
-        lFondo.setLocation(0, 0);
-        lFondo.setIcon(iFondo);
-        iDimAux = new ImageIcon(
-                iFondo.getImage().getScaledInstance(pIzquierda.getWidth(), pIzquierda.getHeight(), Image.SCALE_AREA_AVERAGING)
-        );
-        lFondo.setIcon(iDimAux);
-        pIzquierda.add(lFondo);
-        //Es importante ponerlo al final, JAVA va encimando los labels en el eje z, hacia el fondo de la pantalla.
-
-        /*
-        FIN PANEL IZQUIERDO
-         */
- /*
-        INICIO PANEL DERECHO
-         */
-        pDerecha = new JPanel();
-        pDerecha.setSize(400, 500);
-        pDerecha.setLocation(600, 0);
-        pDerecha.setBackground(Color.WHITE);
-        pDerecha.setLayout(null);
-        this.add(pDerecha);
-
-        lEslogan = new JLabel("Te ayudamos en todo");
-        lEslogan.setFont(fontSubtitulo);
-        lEslogan.setSize(160, 20);
-        lEslogan.setLocation((pDerecha.getWidth() - lEslogan.getWidth()) / 2, 40);
-        lEslogan.setForeground(colorGrisOscuro);
-        lEslogan.setHorizontalAlignment(SwingConstants.CENTER);
-        pDerecha.add(lEslogan);
-
-        lTituloLogin = new JLabel("Registra tus Datos");
-        lTituloLogin.setFont(fontTitulo);
-        lTituloLogin.setSize(150, 30);
-        lTituloLogin.setLocation((pDerecha.getWidth() - lTituloLogin.getWidth()) / 2, 60);
-        lTituloLogin.setForeground(colorGrisOscuro);
-        lTituloLogin.setHorizontalAlignment(SwingConstants.CENTER);
-        pDerecha.add(lTituloLogin);
-
-        lNotificaciones = new JLabel("¿Recibir Notificaciones?");
-        lNotificaciones.setFont(fontSubtitulo);
-        lNotificaciones.setSize(160, 20);
-        lNotificaciones.setLocation((pDerecha.getWidth() - lNotificaciones.getWidth()) / 2, 400);
-        lNotificaciones.setForeground(colorGrisOscuro);
-        lNotificaciones.setHorizontalAlignment(SwingConstants.CENTER);
-        pDerecha.add(lNotificaciones);
-
+    public void crearJTextField() {
         tNombreUsuario = new JTextField();
         TextPrompt placeholderNombre = new TextPrompt("Nombre Usuario", tNombreUsuario, TextPrompt.Show.FOCUS_LOST);
         placeholderNombre.setHorizontalAlignment(SwingConstants.CENTER);
@@ -216,7 +240,9 @@ public class LoginTemplate extends JFrame {
         tNombreUsuario.setCursor(cTexto);
         tNombreUsuario.setBorder(bInferiorAzul);
         pDerecha.add(tNombreUsuario);
+    }
 
+    public void crearJPasswordField() {
         tClaveUsuario = new JPasswordField();
         TextPrompt placeholderPass = new TextPrompt("Clave Usuario", tClaveUsuario, TextPrompt.Show.FOCUS_LOST);
         placeholderPass.setHorizontalAlignment(SwingConstants.CENTER);
@@ -233,7 +259,9 @@ public class LoginTemplate extends JFrame {
         tClaveUsuario.setCursor(cTexto);
         tClaveUsuario.setBorder(bInferiorAzul);
         pDerecha.add(tClaveUsuario);
+    }
 
+    public void crearJComboBox() {
         cbTipoUsuario = new JComboBox();
         cbTipoUsuario.addItem("Cliente");
         cbTipoUsuario.addItem("Cajero");
@@ -244,42 +272,9 @@ public class LoginTemplate extends JFrame {
         cbTipoUsuario.setBackground(Color.WHITE);
         ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
         pDerecha.add(cbTipoUsuario);
+    }
 
-        bEntrar = new JButton("Entrar");
-        bEntrar.setSize(250, 45);
-        bEntrar.setLocation((pDerecha.getWidth() - bEntrar.getWidth()) / 2, 320);
-        bEntrar.setBackground(colorPrincipal);
-        bEntrar.setForeground(Color.WHITE);//Color de la letra.
-        bEntrar.setFocusable(false);//Quita el recuadro de las letras.
-        bEntrar.setCursor(cMano);
-        pDerecha.add(bEntrar);
-
-        bCerrar = new JButton();
-        bCerrar.setSize(30, 30);
-        bCerrar.setLocation(pDerecha.getWidth()-bCerrar.getWidth(), 10);
-        bCerrar.setBackground(Color.WHITE);
-        //bCerrar.setForeground(Color.WHITE);
-        bCerrar.setFocusable(false);
-        bCerrar.setCursor(cMano);
-        iDimAux = new ImageIcon(
-                iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        bCerrar.setIcon(iDimAux);
-        bCerrar.setBorder(null);
-        bCerrar.setFocusable(false);
-        bCerrar.setContentAreaFilled(false);
-        
-        pDerecha.add(bCerrar);
-
-        bRegistrarse = new JButton("Registrarse");
-        bRegistrarse.setSize(200, 30);
-        bRegistrarse.setLocation(pDerecha.getWidth() - bRegistrarse.getWidth(), pDerecha.getHeight()-bRegistrarse.getHeight());
-        bRegistrarse.setBackground(colorPrincipal);
-        bRegistrarse.setForeground(Color.WHITE);
-        bRegistrarse.setFocusable(false);
-        bRegistrarse.setCursor(cMano);
-        pDerecha.add(bRegistrarse);
-
+    public void crearJCheckBox() {
         checkSi = new JCheckBox("Si");
         checkNo = new JCheckBox("No");
 
@@ -301,43 +296,5 @@ public class LoginTemplate extends JFrame {
         grupo = new ButtonGroup(); //Hace que los check sean de una seleccion.
         grupo.add(checkSi);
         grupo.add(checkNo);
-
-        lUsuario = new JLabel();
-        lUsuario.setBounds(40, 130, 30, 30);
-        iDimAux = new ImageIcon(
-                iUsuario2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        lUsuario.setIcon(iDimAux);
-        pDerecha.add(lUsuario);
-
-        lClave = new JLabel();
-        lClave.setBounds(40, 270, 30, 30);
-        iDimAux = new ImageIcon(
-                iClave2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        lClave.setIcon(iDimAux);
-        pDerecha.add(lClave);
-        /*
-        FIN PANEL DERECHO.
-         */
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(1000, 500);
-        setLocationRelativeTo(this);
-        setUndecorated(true);
-        //Borra la barra superior, los botones por defecto y la opcion de agrandar
-        //y mover la ventana. Se puede borrar super() ya que eso solo enviaba el nombre a la ventana.
-        setLayout(null);
-        setVisible(true);
-
-    }
-
-    public void generarFuentes() {
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        try {
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Forte.ttf")));
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Rockwell-ExtraBold.otf")));
-        } catch (FontFormatException | IOException ex) {
-            ex.printStackTrace(System.out);
-        }
     }
 }

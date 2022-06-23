@@ -1,4 +1,4 @@
-package app.login;
+package client.login;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

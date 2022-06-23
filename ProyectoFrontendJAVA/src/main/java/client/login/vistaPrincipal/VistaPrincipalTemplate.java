@@ -1,5 +1,5 @@
 
-package vistaPrincipal;
+package client.login.vistaPrincipal;
 
 import javax.swing.JFrame;
 
