@@ -43,23 +43,13 @@ public class LoginTemplate extends JFrame {
     public LoginTemplate() {
         //super("Login Usuario");
         generarFuentes();
-        
-        
-
         crearObjetosDecoradores();
-       
         crearJPanels();
-
-        crearJLabels();
-
         crearJButtons();
-
-        crearJTextField();
-
-        crearJPasswordField();
-
+        crearJLabels();
+        crearJTextFields();
+        crearJPasswordFields();
         crearJComboBox();
-
         crearJCheckBox();
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -110,154 +100,212 @@ public class LoginTemplate extends JFrame {
 
     public void crearJPanels() {
         ObjGraficoService servicio = ObjGraficoService.getService();
-        pIzquierda= servicio.crearJPanel(600,500,0,0,Color.WHITE);
+        pIzquierda = servicio.crearJPanel(600, 500, 0, 0, Color.WHITE);
         this.add(pIzquierda);
-        pDerecha= servicio.crearJPanel(400, 500, 600, 0, Color.WHITE);
+        pDerecha = servicio.crearJPanel(400, 500, 600, 0, Color.WHITE);
         this.add(pDerecha);
     }
 
     public void crearJLabels() {
         ObjGraficoService servicio = ObjGraficoService.getService();
-        
-        lTituloApp= servicio.crearJLabel("Login de Usuario", fontPrincipal, 100, 20, 220, 30, Color.WHITE);
+
+        lTituloApp = servicio.crearJLabel(
+                "Login de Usuario",
+                fontPrincipal,
+                100,
+                20,
+                220,
+                30,
+                Color.WHITE
+        );
         pIzquierda.add(lTituloApp);
-        
-        lFacebook = servicio.crearJLabel(iFacebook1, 20, pIzquierda.getHeight()-50, 30, 30, cMano);
+
+        lFacebook = servicio.crearJLabel(
+                iFacebook1,
+                20,
+                pIzquierda.getHeight() - 50,
+                30,
+                30,
+                cMano
+        );
         pIzquierda.add(lFacebook);
 
-        lTwitter= servicio.crearJLabel(iTwitter1, 60, pIzquierda.getHeight()-50, 30, 30, cMano);
+        lTwitter = servicio.crearJLabel(
+                iTwitter1,
+                60,
+                pIzquierda.getHeight() - 50,
+                30,
+                30,
+                cMano
+        );
         pIzquierda.add(lTwitter);
-        
-        lYoutube = servicio.crearJLabel(iYoutube1, 100, pIzquierda.getHeight()-50, 30, 30, cMano);
+
+        lYoutube = servicio.crearJLabel(
+                iYoutube1, 
+                100, 
+                pIzquierda.getHeight() - 50,
+                30, 
+                30,
+                cMano
+        );
         pIzquierda.add(lYoutube);
 
-        lLogo= servicio.crearJLabel(iLogo, 50, 20, 40, 40, cMano);
+        lLogo = servicio.crearJLabel(
+                iLogo,
+                50,
+                20,
+                40,
+                40,
+                cMano
+        );
         pIzquierda.add(lLogo);
 
-        lSvg1= servicio.crearJLabel(iSvg1, 100, 100, 500, 345, cMano);
+        lSvg1 = servicio.crearJLabel(
+                iSvg1,
+                100,
+                100,
+                500,
+                345,
+                cMano
+        );
         pIzquierda.add(lSvg1);
 
-        lFondo = servicio.crearJLabel(iFondo, 0, 0, pIzquierda.getWidth(), pIzquierda.getHeight(), cMano);
+        lFondo = servicio.crearJLabel(
+                iFondo,
+                0,
+                0,
+                pIzquierda.getWidth(),
+                pIzquierda.getHeight(),
+                cMano
+        );
         pIzquierda.add(lFondo);
         //Es importante ponerlo al final, JAVA va encimando los labels en el eje z, hacia el fondo de la pantalla.
 
-        lEslogan = servicio.crearJLabel("El mejor experto también fue un día aprendiz.", fontSubtitulo, ((pDerecha.getWidth() - 350) / 2), 40, 350, 20, colorGrisOscuro);
+        lEslogan = servicio.crearJLabel(
+                "El mejor experto también fue un día aprendiz.",
+                fontSubtitulo,
+                ((pDerecha.getWidth() - 350) / 2),
+                40,
+                350,
+                20,
+                colorGrisOscuro
+        );
         pDerecha.add(lEslogan);
 
-        lTituloLogin = servicio.crearJLabel("Registra tus Datos", fontTitulo, (pDerecha.getWidth() - 150) / 2, 70, 150, 30, colorGrisOscuro);
+        lTituloLogin = servicio.crearJLabel(
+                "Registra tus Datos",
+                fontTitulo,
+                (pDerecha.getWidth() - 150) / 2,
+                70,
+                150,
+                30,
+                colorGrisOscuro
+        );
         pDerecha.add(lTituloLogin);
-        
-        lNotificaciones = servicio.crearJLabel("¿Recibir Notificaciones?", fontSubtitulo, (pDerecha.getWidth()-160)/2,400, 160, 40, colorGrisOscuro);
+
+        lNotificaciones = servicio.crearJLabel(
+                "¿Recibir Notificaciones?",
+                fontSubtitulo,
+                (pDerecha.getWidth() - 160) / 2,
+                400,
+                160,
+                40,
+                colorGrisOscuro
+        );
         pDerecha.add(lNotificaciones);
 
-        lUsuario = servicio.crearJLabel(iUsuario2, 40, 130, 30, 30, cMano);
+        lUsuario = servicio.crearJLabel(
+                iUsuario2,
+                40,
+                130,
+                30,
+                30,
+                cMano
+        );
         pDerecha.add(lUsuario);
 
-        lClave = servicio.crearJLabel(iClave2, 40, 270, 30, 30, cMano);
+        lClave = servicio.crearJLabel(
+                iClave2,
+                40,
+                270,
+                30,
+                30,
+                cMano
+        );
         pDerecha.add(lClave);
 
     }
 
     public void crearJButtons() {
-        bOpcion1 = new JButton();
-        bOpcion2 = new JButton();
-        bOpcion3 = new JButton();
-
-        bOpcion1.setBounds(10, 190, 30, 30);
-        bOpcion1.setCursor(cMano);
-        bOpcion2.setBounds(10, 230, 30, 30);
-        bOpcion2.setCursor(cMano);
-        bOpcion3.setBounds(10, 270, 30, 30);
-        bOpcion3.setCursor(cMano);
-
-        iDimAux = new ImageIcon(
-                iPunto1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
-        );
-        bOpcion1.setIcon(iDimAux);
-        bOpcion2.setIcon(iDimAux);
-        bOpcion3.setIcon(iDimAux);
-
-        bOpcion1.setContentAreaFilled(false);
-        bOpcion1.setBorder(null);
-        bOpcion1.setFocusable(false);
-        bOpcion2.setContentAreaFilled(false);
-        bOpcion2.setBorder(null);
-        bOpcion2.setFocusable(false);
-        bOpcion3.setContentAreaFilled(false);
-        bOpcion3.setFocusable(false);
-        bOpcion3.setBorder(null);
-
+        ObjGraficoService servicio = ObjGraficoService.getService();
+        bOpcion1 = servicio.crearJButton(iPunto1, 10, 190, 30, 30, cMano);
         pIzquierda.add(bOpcion1);
+        bOpcion2 = servicio.crearJButton(iPunto1, 10, 230, 30, 30, cMano);
         pIzquierda.add(bOpcion2);
+        bOpcion3 = servicio.crearJButton(iPunto1, 10, 270, 30, 30, cMano);
         pIzquierda.add(bOpcion3);
-
-        bEntrar = new JButton("Entrar");
-        bEntrar.setSize(250, 45);
-        bEntrar.setLocation((pDerecha.getWidth() - bEntrar.getWidth()) / 2, 320);
-        bEntrar.setBackground(colorPrincipal);
-        bEntrar.setForeground(Color.WHITE);//Color de la letra.
-        bEntrar.setFocusable(false);//Quita el recuadro de las letras.
-        bEntrar.setCursor(cMano);
-        pDerecha.add(bEntrar);
-
-        bCerrar = new JButton();
-        bCerrar.setSize(30, 30);
-        bCerrar.setLocation(pDerecha.getWidth() - bCerrar.getWidth(), 10);
-        bCerrar.setBackground(Color.WHITE);
-        //bCerrar.setForeground(Color.WHITE);
-        bCerrar.setFocusable(false);
-        bCerrar.setCursor(cMano);
-        iDimAux = new ImageIcon(
-                iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+               
+        bEntrar = servicio.crearJButton(
+                "Entrar",
+                (pDerecha.getWidth() - 250) / 2,
+                320,
+                250,
+                45,
+                colorPrincipal, 
+                Color.WHITE,
+                cMano
         );
-        bCerrar.setIcon(iDimAux);
+        pDerecha.add(bEntrar);
+        bCerrar = servicio.crearJButton(iCerrar, pDerecha.getWidth()-30, 10, 30, 30, cMano);
         bCerrar.setBorder(null);
         bCerrar.setFocusable(false);
         bCerrar.setContentAreaFilled(false);
-
         pDerecha.add(bCerrar);
-
-        bRegistrarse = new JButton("Registrarse");
-        bRegistrarse.setSize(200, 30);
-        bRegistrarse.setLocation(pDerecha.getWidth() - bRegistrarse.getWidth(), pDerecha.getHeight() - bRegistrarse.getHeight());
-        bRegistrarse.setBackground(colorPrincipal);
-        bRegistrarse.setForeground(Color.WHITE);
-        bRegistrarse.setFocusable(false);
-        bRegistrarse.setCursor(cMano);
+        
+        bRegistrarse = servicio.crearJButton(
+                "Registrarse",
+                pDerecha.getWidth()-200,
+                pDerecha.getHeight()-30,
+                200, 
+                30, 
+                colorPrincipal, 
+                Color.WHITE,
+                cMano
+        );
         pDerecha.add(bRegistrarse);
     }
 
-    public void crearJTextField() {
-        tNombreUsuario = new JTextField();
-        TextPrompt placeholderNombre = new TextPrompt("Nombre Usuario", tNombreUsuario, TextPrompt.Show.FOCUS_LOST);
-        placeholderNombre.setHorizontalAlignment(SwingConstants.CENTER);
-        tNombreUsuario.setSize(260, 40);
-        tNombreUsuario.setLocation((pDerecha.getWidth() - tNombreUsuario.getWidth()) / 2, 120);
-        tNombreUsuario.setForeground(colorGrisOscuro);
-        tNombreUsuario.setBackground(Color.WHITE);
-        tNombreUsuario.setCaretColor(Color.BLUE);
-        tNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-        tNombreUsuario.setCursor(cTexto);
-        tNombreUsuario.setBorder(bInferiorAzul);
+    public void crearJTextFields() {
+        ObjGraficoService servicio= ObjGraficoService.getService();
+        tNombreUsuario = servicio.crearJTextField(
+                "Nombre Usuario",
+                (pDerecha.getWidth() - 260) / 2,
+                120,
+                260,
+                40,
+                colorGrisOscuro,
+                Color.WHITE,
+                Color.BLUE,
+                cTexto,
+                bInferiorAzul
+        );
         pDerecha.add(tNombreUsuario);
     }
 
-    public void crearJPasswordField() {
-        tClaveUsuario = new JPasswordField();
-        TextPrompt placeholderPass = new TextPrompt("Clave Usuario", tClaveUsuario, TextPrompt.Show.FOCUS_LOST);
-        placeholderPass.setHorizontalAlignment(SwingConstants.CENTER);
-        /*
-        FOCUS_GAINED
-        FOCUS_LOST
-         */
-        tClaveUsuario.setSize(260, 40);
-        tClaveUsuario.setLocation((pDerecha.getWidth() - tClaveUsuario.getWidth()) / 2, 260);
-        tClaveUsuario.setForeground(colorGrisOscuro);
-        tClaveUsuario.setCaretColor(Color.BLUE);
-        //tClaveUsuario.setCaretPosition();
-        tClaveUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-        tClaveUsuario.setCursor(cTexto);
-        tClaveUsuario.setBorder(bInferiorAzul);
+    public void crearJPasswordFields() {
+        ObjGraficoService servicio = ObjGraficoService.getService();
+        
+        tClaveUsuario = servicio.crearJPasswordField(
+                "Clave Usuario", 
+                (pDerecha.getWidth() - 260) / 2,
+                260,
+                260, 
+                40,
+                colorGrisOscuro,
+                Color.BLUE,
+                cTexto,
+                bInferiorAzul
+        );
         pDerecha.add(tClaveUsuario);
     }
 
