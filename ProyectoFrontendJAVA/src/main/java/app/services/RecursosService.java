@@ -15,7 +15,7 @@ public class RecursosService {
 
     private static RecursosService servicio;
 
-    private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente;
+    private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente,colorSecundario;
     private Font fontPrincipal, fontTitulo, fontSubtitulo;
     private Cursor cMano, cTexto;
     private Border bInferiorAzul;
@@ -36,6 +36,10 @@ public class RecursosService {
 
     public Color getColorNegroTransparente() {
         return colorNegroTransparente;
+    }
+    
+    public Color getColorSecundario(){
+        return colorSecundario;
     }
 
     public Font getFontPrincipal() {
@@ -127,6 +131,7 @@ public class RecursosService {
         colorPrincipal = new Color(60, 78, 120);
         colorGrisOscuro = new Color(80, 80, 80);
         colorNegroTransparente = new Color(30, 30, 30, 30);
+        colorSecundario = new Color(151,0,158);
         cMano = new Cursor(Cursor.HAND_CURSOR);
         cTexto = new Cursor(Cursor.TEXT_CURSOR);
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorPrincipal);

@@ -3,13 +3,6 @@ package client.login;
 import app.services.ObjGraficoService;
 import app.services.RecursosService;
 import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -20,9 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.Border;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 
 public class LoginTemplate extends JFrame {
 
@@ -36,9 +26,14 @@ public class LoginTemplate extends JFrame {
     private ButtonGroup grupo;
     private JLabel lFondo, lSvg1, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
     private RecursosService sRecursos;
+    private ObjGraficoService sGraficos;
+    private LoginComponent loginComponent;
 
-    public LoginTemplate() {
+    public LoginTemplate(LoginComponent component) {
         //super("Login Usuario");
+        this.loginComponent= component;
+        
+        sGraficos = ObjGraficoService.getService();
         sRecursos = RecursosService.getService();
 
         crearJPanels();
@@ -201,10 +196,13 @@ public class LoginTemplate extends JFrame {
     public void crearJButtons() {
         ObjGraficoService servicio = ObjGraficoService.getService();
         bOpcion1 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 190, 30, 30, sRecursos.getcMano());
+        bOpcion1.addActionListener(loginComponent);
         pIzquierda.add(bOpcion1);
         bOpcion2 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 230, 30, 30, sRecursos.getcMano());
+        bOpcion2.addActionListener(loginComponent);
         pIzquierda.add(bOpcion2);
         bOpcion3 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 270, 30, 30, sRecursos.getcMano());
+        bOpcion3.addActionListener(loginComponent);
         pIzquierda.add(bOpcion3);
 
         bEntrar = servicio.crearJButton(
@@ -217,11 +215,13 @@ public class LoginTemplate extends JFrame {
                 Color.WHITE,
                 sRecursos.getcMano()
         );
+        bEntrar.addActionListener(loginComponent);
         pDerecha.add(bEntrar);
         bCerrar = servicio.crearJButton(sRecursos.getiCerrar(), pDerecha.getWidth() - 30, 10, 30, 30, sRecursos.getcMano());
         bCerrar.setBorder(null);
         bCerrar.setFocusable(false);
         bCerrar.setContentAreaFilled(false);
+        bCerrar.addActionListener(loginComponent);
         pDerecha.add(bCerrar);
 
         bRegistrarse = servicio.crearJButton(
@@ -234,6 +234,7 @@ public class LoginTemplate extends JFrame {
                 Color.WHITE,
                 sRecursos.getcMano()
         );
+        bRegistrarse.addActionListener(loginComponent);
         pDerecha.add(bRegistrarse);
     }
 
@@ -307,4 +308,49 @@ public class LoginTemplate extends JFrame {
         grupo.add(checkSi);
         grupo.add(checkNo);
     }
+
+    public JTextField gettNombreUsuario() {
+        return tNombreUsuario;
+    }
+
+    public JPasswordField gettClaveUsuario() {
+        return tClaveUsuario;
+    }
+
+    public JComboBox getCbTipoUsuario() {
+        return cbTipoUsuario;
+    }
+
+    public JButton getbEntrar() {
+        return bEntrar;
+    }
+
+    public JButton getbCerrar() {
+        return bCerrar;
+    }
+
+    public JButton getbRegistrarse() {
+        return bRegistrarse;
+    }
+
+    public JButton getbOpcion1() {
+        return bOpcion1;
+    }
+
+    public JButton getbOpcion2() {
+        return bOpcion2;
+    }
+
+    public JButton getbOpcion3() {
+        return bOpcion3;
+    }
+
+    public JCheckBox getCheckSi() {
+        return checkSi;
+    }
+
+    public JCheckBox getCheckNo() {
+        return checkNo;
+    }
+    
 }

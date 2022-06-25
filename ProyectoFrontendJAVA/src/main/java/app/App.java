@@ -2,7 +2,7 @@
 
 package app;
 
-import client.login.LoginTemplate;
+import client.login.LoginComponent;
 import javax.swing.SwingUtilities;
 import client.login.vistaPrincipal.VistaPrincipalTemplate;
 
@@ -15,7 +15,7 @@ public class App {
             public void run(){
 //                VistaPrincipalTemplate vista=new VistaPrincipalTemplate();
 //                vista.getClass();
-                LoginTemplate login = new LoginTemplate();
+                LoginComponent login = new LoginComponent();
                 login.getClass();
             }
         };
