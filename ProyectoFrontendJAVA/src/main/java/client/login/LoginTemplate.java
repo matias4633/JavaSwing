@@ -1,6 +1,7 @@
 package client.login;
 
 import app.services.ObjGraficoService;
+import app.services.RecursosService;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -33,17 +34,13 @@ public class LoginTemplate extends JFrame {
     private JButton bEntrar, bCerrar, bRegistrarse, bOpcion1, bOpcion2, bOpcion3;
     private JCheckBox checkSi, checkNo;
     private ButtonGroup grupo;
-    private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente;
-    private Font fontPrincipal, fontTitulo, fontSubtitulo;
-    private Cursor cMano, cTexto;
-    private Border bInferiorAzul;
-    private ImageIcon iFondo, iLogo, iCerrar, iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux;
     private JLabel lFondo, lSvg1, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
+    private RecursosService sRecursos;
 
     public LoginTemplate() {
         //super("Login Usuario");
-        generarFuentes();
-        crearObjetosDecoradores();
+        sRecursos = RecursosService.getService();
+
         crearJPanels();
         crearJButtons();
         crearJLabels();
@@ -63,41 +60,6 @@ public class LoginTemplate extends JFrame {
 
     }
 
-    public void generarFuentes() {
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        try {
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Forte.ttf")));
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Rockwell-ExtraBold.otf")));
-        } catch (FontFormatException | IOException ex) {
-            ex.printStackTrace(System.out);
-        }
-    }
-
-    public void crearObjetosDecoradores() {
-        colorPrincipal = new Color(60, 78, 120);
-        colorGrisOscuro = new Color(80, 80, 80);
-        colorNegroTransparente = new Color(30, 30, 30, 30);
-        cMano = new Cursor(Cursor.HAND_CURSOR);
-        cTexto = new Cursor(Cursor.TEXT_CURSOR);
-        bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorPrincipal);
-
-        fontPrincipal = new Font("Rockwell Extra", Font.PLAIN, 20);
-        fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);
-        fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
-
-        iFondo = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\fondo.png");
-        iLogo = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\logo.png");
-        iUsuario2 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\usuario2.png");
-        iClave2 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\clave2.png");
-        iPunto1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\punto1.png");
-        iFacebook1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\facebook1.png");
-        iTwitter1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\twitter1.png");
-        iYoutube1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\youtube1.png");
-        iSvg1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\imagen1.png");
-        iCerrar = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\cerrar.png");
-
-    }
-
     public void crearJPanels() {
         ObjGraficoService servicio = ObjGraficoService.getService();
         pIzquierda = servicio.crearJPanel(600, 500, 0, 0, Color.WHITE);
@@ -111,7 +73,7 @@ public class LoginTemplate extends JFrame {
 
         lTituloApp = servicio.crearJLabel(
                 "Login de Usuario",
-                fontPrincipal,
+                sRecursos.getFontPrincipal(),
                 100,
                 20,
                 220,
@@ -121,116 +83,116 @@ public class LoginTemplate extends JFrame {
         pIzquierda.add(lTituloApp);
 
         lFacebook = servicio.crearJLabel(
-                iFacebook1,
+                sRecursos.getiFacebook1(),
                 20,
                 pIzquierda.getHeight() - 50,
                 30,
                 30,
-                cMano
+                sRecursos.getcMano()
         );
         pIzquierda.add(lFacebook);
 
         lTwitter = servicio.crearJLabel(
-                iTwitter1,
+                sRecursos.getiTwitter1(),
                 60,
                 pIzquierda.getHeight() - 50,
                 30,
                 30,
-                cMano
+                sRecursos.getcMano()
         );
         pIzquierda.add(lTwitter);
 
         lYoutube = servicio.crearJLabel(
-                iYoutube1, 
-                100, 
+                sRecursos.getiYoutube1(),
+                100,
                 pIzquierda.getHeight() - 50,
-                30, 
                 30,
-                cMano
+                30,
+                sRecursos.getcMano()
         );
         pIzquierda.add(lYoutube);
 
         lLogo = servicio.crearJLabel(
-                iLogo,
+                sRecursos.getiLogo(),
                 50,
                 20,
                 40,
                 40,
-                cMano
+                sRecursos.getcMano()
         );
         pIzquierda.add(lLogo);
 
         lSvg1 = servicio.crearJLabel(
-                iSvg1,
+                sRecursos.getiSvg1(),
                 100,
                 100,
                 500,
                 345,
-                cMano
+                sRecursos.getcMano()
         );
         pIzquierda.add(lSvg1);
 
         lFondo = servicio.crearJLabel(
-                iFondo,
+                sRecursos.getiFondo(),
                 0,
                 0,
                 pIzquierda.getWidth(),
                 pIzquierda.getHeight(),
-                cMano
+                sRecursos.getcMano()
         );
         pIzquierda.add(lFondo);
         //Es importante ponerlo al final, JAVA va encimando los labels en el eje z, hacia el fondo de la pantalla.
 
         lEslogan = servicio.crearJLabel(
                 "El mejor experto también fue un día aprendiz.",
-                fontSubtitulo,
+                sRecursos.getFontSubtitulo(),
                 ((pDerecha.getWidth() - 350) / 2),
                 40,
                 350,
                 20,
-                colorGrisOscuro
+                sRecursos.getColorGrisOscuro()
         );
         pDerecha.add(lEslogan);
 
         lTituloLogin = servicio.crearJLabel(
                 "Registra tus Datos",
-                fontTitulo,
+                sRecursos.getFontTitulo(),
                 (pDerecha.getWidth() - 150) / 2,
                 70,
                 150,
                 30,
-                colorGrisOscuro
+                sRecursos.getColorGrisOscuro()
         );
         pDerecha.add(lTituloLogin);
 
         lNotificaciones = servicio.crearJLabel(
                 "¿Recibir Notificaciones?",
-                fontSubtitulo,
+                sRecursos.getFontSubtitulo(),
                 (pDerecha.getWidth() - 160) / 2,
                 400,
                 160,
                 40,
-                colorGrisOscuro
+                sRecursos.getColorGrisOscuro()
         );
         pDerecha.add(lNotificaciones);
 
         lUsuario = servicio.crearJLabel(
-                iUsuario2,
+                sRecursos.getiUsuario2(),
                 40,
                 130,
                 30,
                 30,
-                cMano
+                sRecursos.getcMano()
         );
         pDerecha.add(lUsuario);
 
         lClave = servicio.crearJLabel(
-                iClave2,
+                sRecursos.getiClave2(),
                 40,
                 270,
                 30,
                 30,
-                cMano
+                sRecursos.getcMano()
         );
         pDerecha.add(lClave);
 
@@ -238,73 +200,73 @@ public class LoginTemplate extends JFrame {
 
     public void crearJButtons() {
         ObjGraficoService servicio = ObjGraficoService.getService();
-        bOpcion1 = servicio.crearJButton(iPunto1, 10, 190, 30, 30, cMano);
+        bOpcion1 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 190, 30, 30, sRecursos.getcMano());
         pIzquierda.add(bOpcion1);
-        bOpcion2 = servicio.crearJButton(iPunto1, 10, 230, 30, 30, cMano);
+        bOpcion2 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 230, 30, 30, sRecursos.getcMano());
         pIzquierda.add(bOpcion2);
-        bOpcion3 = servicio.crearJButton(iPunto1, 10, 270, 30, 30, cMano);
+        bOpcion3 = servicio.crearJButton(sRecursos.getiPunto1(), 10, 270, 30, 30, sRecursos.getcMano());
         pIzquierda.add(bOpcion3);
-               
+
         bEntrar = servicio.crearJButton(
                 "Entrar",
                 (pDerecha.getWidth() - 250) / 2,
                 320,
                 250,
                 45,
-                colorPrincipal, 
+                sRecursos.getColorPrincipal(),
                 Color.WHITE,
-                cMano
+                sRecursos.getcMano()
         );
         pDerecha.add(bEntrar);
-        bCerrar = servicio.crearJButton(iCerrar, pDerecha.getWidth()-30, 10, 30, 30, cMano);
+        bCerrar = servicio.crearJButton(sRecursos.getiCerrar(), pDerecha.getWidth() - 30, 10, 30, 30, sRecursos.getcMano());
         bCerrar.setBorder(null);
         bCerrar.setFocusable(false);
         bCerrar.setContentAreaFilled(false);
         pDerecha.add(bCerrar);
-        
+
         bRegistrarse = servicio.crearJButton(
                 "Registrarse",
-                pDerecha.getWidth()-200,
-                pDerecha.getHeight()-30,
-                200, 
-                30, 
-                colorPrincipal, 
+                pDerecha.getWidth() - 200,
+                pDerecha.getHeight() - 30,
+                200,
+                30,
+                sRecursos.getColorPrincipal(),
                 Color.WHITE,
-                cMano
+                sRecursos.getcMano()
         );
         pDerecha.add(bRegistrarse);
     }
 
     public void crearJTextFields() {
-        ObjGraficoService servicio= ObjGraficoService.getService();
+        ObjGraficoService servicio = ObjGraficoService.getService();
         tNombreUsuario = servicio.crearJTextField(
                 "Nombre Usuario",
                 (pDerecha.getWidth() - 260) / 2,
                 120,
                 260,
                 40,
-                colorGrisOscuro,
+                sRecursos.getColorGrisOscuro(),
                 Color.WHITE,
                 Color.BLUE,
-                cTexto,
-                bInferiorAzul
+                sRecursos.getcTexto(),
+                sRecursos.getbInferiorAzul()
         );
         pDerecha.add(tNombreUsuario);
     }
 
     public void crearJPasswordFields() {
         ObjGraficoService servicio = ObjGraficoService.getService();
-        
+
         tClaveUsuario = servicio.crearJPasswordField(
-                "Clave Usuario", 
+                "Clave Usuario",
                 (pDerecha.getWidth() - 260) / 2,
                 260,
-                260, 
+                260,
                 40,
-                colorGrisOscuro,
+                sRecursos.getColorGrisOscuro(),
                 Color.BLUE,
-                cTexto,
-                bInferiorAzul
+                sRecursos.getcTexto(),
+                sRecursos.getbInferiorAzul()
         );
         pDerecha.add(tClaveUsuario);
     }
@@ -316,7 +278,7 @@ public class LoginTemplate extends JFrame {
         cbTipoUsuario.addItem("Administrador");
         cbTipoUsuario.setSize(220, 30);
         cbTipoUsuario.setLocation((pDerecha.getWidth() - cbTipoUsuario.getWidth()) / 2, 205);
-        cbTipoUsuario.setForeground(colorGrisOscuro);
+        cbTipoUsuario.setForeground(sRecursos.getColorGrisOscuro());
         cbTipoUsuario.setBackground(Color.WHITE);
         ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
         pDerecha.add(cbTipoUsuario);
@@ -330,13 +292,13 @@ public class LoginTemplate extends JFrame {
         checkSi.setFocusable(false);
         checkSi.setBackground(Color.WHITE);
         checkSi.setLocation((pDerecha.getWidth() - checkSi.getWidth()) / 2 - 15, 380);
-        checkSi.setCursor(cMano);
+        checkSi.setCursor(sRecursos.getcMano());
 
         checkNo.setSize(45, 25);
         checkNo.setFocusable(false);
         checkNo.setBackground(Color.WHITE);
         checkNo.setLocation((pDerecha.getWidth() + checkNo.getWidth()) / 2 - 15, 380);
-        checkNo.setCursor(cMano);
+        checkNo.setCursor(sRecursos.getcMano());
 
         pDerecha.add(checkNo);
         pDerecha.add(checkSi);
