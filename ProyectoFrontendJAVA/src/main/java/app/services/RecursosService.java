@@ -16,10 +16,10 @@ public class RecursosService {
     private static RecursosService servicio;
 
     private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente,colorSecundario;
-    private Font fontPrincipal, fontTitulo, fontSubtitulo;
+    private Font fontPrincipal, fontTitulo, fontSubtitulo,fontLigera;
     private Cursor cMano, cTexto;
     private Border bInferiorAzul;
-    private ImageIcon iFondo, iLogo, iCerrar, iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux;
+    private ImageIcon iFondo, iLogo, iCerrar, iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux,iMinimizar;
 
     private RecursosService() {
         generarFuentes();
@@ -110,6 +110,15 @@ public class RecursosService {
         return iDimAux;
     }
 
+    public Font getFontLigera() {
+        return fontLigera;
+    }
+
+    public ImageIcon getiMinimizar() {
+        return iMinimizar;
+    }
+    
+
     public static RecursosService getService() {
         if (servicio == null) {
             servicio = new RecursosService();
@@ -121,6 +130,7 @@ public class RecursosService {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         try {
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Forte.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\LUZRO.TTF")));
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\Rockwell-ExtraBold.otf")));
         } catch (FontFormatException | IOException ex) {
             ex.printStackTrace(System.out);
@@ -139,6 +149,7 @@ public class RecursosService {
         fontPrincipal = new Font("Rockwell Extra", Font.PLAIN, 20);
         fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);
         fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
+        fontLigera = new Font("LuzSans-Book", Font.PLAIN, 12);
 
         iFondo = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\fondo.png");
         iLogo = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\logo.png");
@@ -150,7 +161,7 @@ public class RecursosService {
         iYoutube1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\youtube1.png");
         iSvg1 = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\imagen1.png");
         iCerrar = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\cerrar.png");
-
+        iMinimizar = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\minimizar.png");
     }
 
 }
