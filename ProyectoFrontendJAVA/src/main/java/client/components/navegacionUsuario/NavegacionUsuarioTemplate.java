@@ -28,6 +28,7 @@ public class NavegacionUsuarioTemplate extends JPanel {
         crearJPanels();
         crearObjetosDecoradores();
         crearJLabels();
+        crearJButtons();
 
         this.setSize(250, 700);
         this.setLayout(null);
@@ -77,6 +78,77 @@ public class NavegacionUsuarioTemplate extends JPanel {
                 Color.WHITE
         );
         pSuperior.add(lEslogan);
+    }
+    
+    public void crearJButtons(){
+        bInicio=sGraficos.crearJButton("      Inicio", 50, 30, 150, 30, null, Color.white,sRecursos.getcMano());
+        bInicio.setBorder(null);
+        bInicio.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iInicio.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bInicio.setIcon(iDimAux);
+        bInicio.setHorizontalAlignment(SwingConstants.LEFT);
+        bInicio.addActionListener(component);
+        pInferior.add(bInicio);
+        
+        bPerfil=sGraficos.crearJButton("      Perfil", 50, 70, 150, 30, null, Color.white,sRecursos.getcMano());
+        bPerfil.setBorder(null);
+        bPerfil.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iPerfil.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bPerfil.setIcon(iDimAux);
+        bPerfil.setHorizontalAlignment(SwingConstants.LEFT);
+        bPerfil.addActionListener(component);
+        pInferior.add(bPerfil);
+        
+        
+        bAmigos=sGraficos.crearJButton("      Amigos", 50, 110, 150, 30, null, Color.white,sRecursos.getcMano());
+        bAmigos.setBorder(null);
+        bAmigos.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iAmigos.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bAmigos.setIcon(iDimAux);
+        bAmigos.setHorizontalAlignment(SwingConstants.LEFT);
+        bAmigos.addActionListener(component);
+        pInferior.add(bAmigos);
+        
+        bProductos=sGraficos.crearJButton("      Productos", 50, 150, 150, 30, null, Color.white,sRecursos.getcMano());
+        bProductos.setBorder(null);
+        bProductos.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iProductos.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bProductos.setIcon(iDimAux);
+        bProductos.setHorizontalAlignment(SwingConstants.LEFT);
+        bProductos.addActionListener(component);
+        pInferior.add(bProductos);
+        
+        bConfiguracion=sGraficos.crearJButton("      Configuracion", 50, 190, 150, 30, null, Color.white,sRecursos.getcMano());
+        bConfiguracion.setBorder(null);
+        bConfiguracion.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iConfiguracion.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bConfiguracion.setIcon(iDimAux);
+        bConfiguracion.setHorizontalAlignment(SwingConstants.LEFT);
+        bConfiguracion.addActionListener(component);
+        pInferior.add(bConfiguracion);
+        
+        bCerarSesion=sGraficos.crearJButton("      Cerrar Sesión", 50, 230, 150, 30, null, Color.white,sRecursos.getcMano());
+        bCerarSesion.setBorder(null);
+        bCerarSesion.setFont(sRecursos.getFontLigera());
+        iDimAux=new ImageIcon(
+                iCerrarSesion.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+        );
+        bCerarSesion.setIcon(iDimAux);
+        bCerarSesion.setHorizontalAlignment(SwingConstants.LEFT);
+        bCerarSesion.addActionListener(component);
+        pInferior.add(bCerarSesion);
+        
+        
     }
 
 }

@@ -4,7 +4,7 @@ package client.components.barraTitulo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import client.components.barraTitulo.BarraTituloTemplate;
-import client.login.vistaPrincipal.VistaPrincipalComponent;
+import client.vistaPrincipal.VistaPrincipalComponent;
 
 
 public class BarraTituloComponent implements ActionListener{

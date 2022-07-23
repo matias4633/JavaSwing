@@ -2,7 +2,7 @@ package client.components.barraTitulo;
 
 import app.services.ObjGraficoService;
 import app.services.RecursosService;
-import client.login.vistaPrincipal.VistaPrincipalComponent;
+import client.vistaPrincipal.VistaPrincipalComponent;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;

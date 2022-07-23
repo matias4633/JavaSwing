@@ -3,9 +3,9 @@
 package app;
 
 import client.login.LoginComponent;
-import client.login.vistaPrincipal.VistaPrincipalComponent;
+import client.vistaPrincipal.VistaPrincipalComponent;
 import javax.swing.SwingUtilities;
-import client.login.vistaPrincipal.VistaPrincipalTemplate;
+import client.vistaPrincipal.VistaPrincipalTemplate;
 
 
 public class App {

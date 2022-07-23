@@ -1,4 +1,4 @@
-package client.login.vistaPrincipal;
+package client.vistaPrincipal;
 
 import app.services.ObjGraficoService;
 import app.services.RecursosService;

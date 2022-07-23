@@ -1,7 +1,7 @@
 
 package client.login;
 
-import client.login.vistaPrincipal.VistaPrincipalComponent;
+import client.vistaPrincipal.VistaPrincipalComponent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
