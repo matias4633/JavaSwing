@@ -1,7 +1,7 @@
 Proyecto realizado con la tecnologia de Java Swing
 
-<img src="/muestra1" />
+<img src="ProyectoFrontendJAVA/muestra1" />
 <br>
-<img src="/muestra2" />
+<img src="ProyectoFrontendJAVA/muestra2" />
 
 Actualmente en proceso.
