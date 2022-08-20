@@ -43,14 +43,14 @@ public class NavegacionUsuarioTemplate extends JPanel {
     }
 
     public void crearObjetosDecoradores() {
-        this.iIconoUsuario = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\usuario_navegacion.png");
-        this.iInicio = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\inicio.png");
-        this.iPerfil = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\perfil.png");
-        this.iAmigos = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\amigos.png");
-        this.iProductos = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\productos.png");
-        this.iConfiguracion = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\configuracion.png");
-        this.iCerrarSesion = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\salir.png");
-        this.iImagenUsuario = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\perfiles\\perfil1.png");
+        this.iIconoUsuario = new ImageIcon("resources\\images\\usuario_navegacion.png");
+        this.iInicio = new ImageIcon("resources\\images\\inicio.png");
+        this.iPerfil = new ImageIcon("resources\\images\\perfil.png");
+        this.iAmigos = new ImageIcon("resources\\images\\amigos.png");
+        this.iProductos = new ImageIcon("resources\\images\\productos.png");
+        this.iConfiguracion = new ImageIcon("resources\\images\\configuracion.png");
+        this.iCerrarSesion = new ImageIcon("resources\\images\\salir.png");
+        this.iImagenUsuario = new ImageIcon("resources\\images\\perfiles\\perfil1.png");
         this.bVacio = new EmptyBorder(2, 20, 2, 2);
     }
 

@@ -37,14 +37,14 @@ public class BarraTituloTemplate extends JPanel {
     public void crearObjetosDecoradores(){
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         try {
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\fonts\\BRITANIC.TTF")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("resources\\fonts\\BRITANIC.TTF")));
             
         } catch (FontFormatException | IOException ex) {
             ex.printStackTrace(System.out);
         }
         fontTituloBarra= new Font("Britannic Bold",Font.PLAIN,24);
         
-        iLogoApp = new ImageIcon("C:\\Users\\matia\\Documents\\GITHUB\\ProyectoFrontendJAVA\\ProyectoFrontendJAVA\\resources\\images\\logo_app.png");
+        iLogoApp = new ImageIcon("resources\\images\\logo_app.png");
         
     }
     
