@@ -52,6 +52,8 @@ public class ConfiguracionesTemplate extends JPanel {
                 sRecursosService.getBorderGris()
         );
         pDibujo.addMouseListener(this.configuracionesComponent);
+        pDibujo.addMouseMotionListener(this.configuracionesComponent);
+        pDibujo.addMouseWheelListener(this.configuracionesComponent);
         pDibujo.setCursor(cCruz);
         this.add(pDibujo);
 
@@ -63,7 +65,6 @@ public class ConfiguracionesTemplate extends JPanel {
         );
         this.add(pDatos);
 
-        
     }
 
     public void crearJLabelsEstaticos() {

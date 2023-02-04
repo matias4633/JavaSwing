@@ -3,7 +3,9 @@ package client.login;
 import app.services.ObjGraficoService;
 import app.services.RecursosService;
 import java.awt.Color;
+import java.awt.Image;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -27,12 +29,14 @@ public class LoginTemplate extends JFrame {
     private JLabel lFondo, lSvg1, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
     private RecursosService sRecursos;
     private ObjGraficoService sGraficos;
+    private ImageIcon iUsuario1, iClave1;
+    private ImageIcon iFacebook2, iTwitter2, iYoutube2,iDimAux,iYoutube1,iTwitter1,iFacebook1;
     private LoginComponent loginComponent;
 
     public LoginTemplate(LoginComponent component) {
         //super("Login Usuario");
-        this.loginComponent= component;
-        
+        this.loginComponent = component;
+
         sGraficos = ObjGraficoService.getService();
         sRecursos = RecursosService.getService();
 
@@ -43,6 +47,7 @@ public class LoginTemplate extends JFrame {
         crearJPasswordFields();
         crearJComboBox();
         crearJCheckBox();
+        crearObjetosDecoradores();
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1000, 500);
@@ -53,6 +58,18 @@ public class LoginTemplate extends JFrame {
         setLayout(null);
         setVisible(true);
 
+    }
+
+    private void crearObjetosDecoradores() {
+        iUsuario1 = new ImageIcon("resources\\images\\usuario1.png");
+        iClave1 = new ImageIcon("resources\\images\\clave1.png");
+        iFacebook2 = new ImageIcon("resources\\images\\facebook2.png");
+        iTwitter2 = new ImageIcon("resources\\images\\twitter2.png");
+        iYoutube2 = new ImageIcon("resources\\images\\youtube2.png");
+        iYoutube1 = new ImageIcon("resources\\images\\youtube1.png");
+        iTwitter1 = new ImageIcon("resources\\images\\twitter1.png");
+        iFacebook1 = new ImageIcon("resources\\images\\facebook1.png");
+        
     }
 
     public void crearJPanels() {
@@ -85,6 +102,7 @@ public class LoginTemplate extends JFrame {
                 30,
                 sRecursos.getcMano()
         );
+        lFacebook.addMouseListener(loginComponent);
         pIzquierda.add(lFacebook);
 
         lTwitter = servicio.crearJLabel(
@@ -95,6 +113,7 @@ public class LoginTemplate extends JFrame {
                 30,
                 sRecursos.getcMano()
         );
+        lTwitter.addMouseListener(loginComponent);
         pIzquierda.add(lTwitter);
 
         lYoutube = servicio.crearJLabel(
@@ -105,6 +124,7 @@ public class LoginTemplate extends JFrame {
                 30,
                 sRecursos.getcMano()
         );
+        lYoutube.addMouseListener(loginComponent);
         pIzquierda.add(lYoutube);
 
         lLogo = servicio.crearJLabel(
@@ -216,6 +236,7 @@ public class LoginTemplate extends JFrame {
                 sRecursos.getcMano()
         );
         bEntrar.addActionListener(loginComponent);
+        bEntrar.addMouseListener(loginComponent);
         pDerecha.add(bEntrar);
         bCerrar = servicio.crearJButton(sRecursos.getiCerrar(), pDerecha.getWidth() - 30, 10, 30, 30, sRecursos.getcMano());
         bCerrar.setBorder(null);
@@ -235,6 +256,7 @@ public class LoginTemplate extends JFrame {
                 sRecursos.getcMano()
         );
         bRegistrarse.addActionListener(loginComponent);
+        bRegistrarse.addMouseListener(loginComponent);
         pDerecha.add(bRegistrarse);
     }
 
@@ -352,5 +374,50 @@ public class LoginTemplate extends JFrame {
     public JCheckBox getCheckNo() {
         return checkNo;
     }
+
+    public ImageIcon getIBlanca(JLabel label) {
+        if (label == lFacebook) {
+            iDimAux = new ImageIcon(
+                    iFacebook1.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        if (label == lTwitter) {
+            iDimAux = new ImageIcon(
+                    iTwitter1.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        if (label == lYoutube) {
+            iDimAux = new ImageIcon(
+                    iYoutube1.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        return iDimAux;
+    }
+
+    public ImageIcon getINaranja(JLabel label) {
+        if (label == lFacebook) {
+            iDimAux = new ImageIcon(
+                    iFacebook2.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        if (label == lTwitter) {
+            iDimAux = new ImageIcon(
+                    iTwitter2.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        if (label == lYoutube) {
+            iDimAux = new ImageIcon(
+                    iYoutube2.getImage()
+                            .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+            );
+        }
+        return iDimAux;
+    }
     
+    public RecursosService getRecursosService(){ return sRecursos; }
 }

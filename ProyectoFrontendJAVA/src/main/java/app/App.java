@@ -14,10 +14,10 @@ public class App {
         Runnable correrAplicacion = new Runnable(){
             @Override
             public void run(){
-                VistaPrincipalComponent vista = new VistaPrincipalComponent(); //Solo para pruebas. No VA el Login component
-                vista.getClass();
-//                LoginComponent login = new LoginComponent();
-//                login.getClass();
+//                VistaPrincipalComponent vista = new VistaPrincipalComponent(); //Solo para pruebas. No VA el Login component
+//                vista.getClass();
+                LoginComponent login = new LoginComponent();
+                login.getClass();
             }
         };
         SwingUtilities.invokeLater(correrAplicacion);

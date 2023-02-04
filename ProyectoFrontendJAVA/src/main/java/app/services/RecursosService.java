@@ -15,10 +15,10 @@ public class RecursosService {
 
     private static RecursosService servicio;
 
-    private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente, colorSecundario, colorGrisClaro;
+    private Color colorPrincipal, colorGrisOscuro, colorNegroTransparente, colorSecundario, colorGrisClaro, colorPrincipalOscuro;
     private Font fontPrincipal, fontTitulo, fontSubtitulo, fontLigera;
     private Cursor cMano, cTexto;
-    private Border bInferiorAzul, borderGris;
+    private Border bInferiorAzul, borderGris, bInferiorGris;
     private ImageIcon iFondo, iLogo, iCerrar, iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux, iMinimizar;
 
     private RecursosService() {
@@ -133,6 +133,14 @@ public class RecursosService {
         return servicio;
     }
 
+    public Color getColorPrincipalOscuro() {
+        return colorPrincipalOscuro;
+    }
+
+    public Border getBInferiorGris() {
+        return bInferiorGris;
+    }
+
     private void generarFuentes() {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         try {
@@ -145,15 +153,19 @@ public class RecursosService {
     }
 
     private void crearObjetosDecoradores() {
+        colorPrincipalOscuro = new Color(30, 48, 90);
         colorPrincipal = new Color(60, 78, 120);
         colorGrisOscuro = new Color(80, 80, 80);
         colorGrisClaro = new Color(249, 246, 249);
         colorNegroTransparente = new Color(30, 30, 30, 30);
         colorSecundario = new Color(151, 0, 158);
+
         cMano = new Cursor(Cursor.HAND_CURSOR);
         cTexto = new Cursor(Cursor.TEXT_CURSOR);
+
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorPrincipal);
         borderGris = BorderFactory.createLineBorder(Color.LIGHT_GRAY, 2, true);
+        bInferiorGris = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.LIGHT_GRAY);
 
         fontPrincipal = new Font("Rockwell Extra", Font.PLAIN, 20);
         fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);

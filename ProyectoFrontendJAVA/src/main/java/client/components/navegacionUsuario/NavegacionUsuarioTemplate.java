@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 public class NavegacionUsuarioTemplate extends JPanel {
 
-    private NavegacionUsuarioComponent component;
+    private NavegacionUsuarioComponent navegacionUsuarioComponent;
     private ObjGraficoService sGraficos;
     private RecursosService sRecursos;
     private JLabel lNombreUsuario, lEslogan, lImagenUsuario, lIconoUsuario;
@@ -21,7 +21,7 @@ public class NavegacionUsuarioTemplate extends JPanel {
     private Border bVacio;
 
     public NavegacionUsuarioTemplate(NavegacionUsuarioComponent component) {
-        this.component = component;
+        this.navegacionUsuarioComponent = component;
         this.sGraficos = ObjGraficoService.getService();
         this.sRecursos = RecursosService.getService();
 
@@ -79,76 +79,112 @@ public class NavegacionUsuarioTemplate extends JPanel {
         );
         pSuperior.add(lEslogan);
     }
-    
-    public void crearJButtons(){
-        bInicio=sGraficos.crearJButton("      Inicio", 50, 30, 150, 30, null, Color.white,sRecursos.getcMano());
+
+    public void crearJButtons() {
+        bInicio = sGraficos.crearJButton("      Inicio", 35, 30, 180, 30, null, Color.white, sRecursos.getcMano());
         bInicio.setBorder(null);
         bInicio.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iInicio.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bInicio.setIcon(iDimAux);
         bInicio.setHorizontalAlignment(SwingConstants.LEFT);
-        bInicio.addActionListener(component);
+        bInicio.addActionListener(navegacionUsuarioComponent);
+        bInicio.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bInicio);
-        
-        bPerfil=sGraficos.crearJButton("      Perfil", 50, 70, 150, 30, null, Color.white,sRecursos.getcMano());
+
+        bPerfil = sGraficos.crearJButton("      Perfil", 35, 70, 180, 30, null, Color.white, sRecursos.getcMano());
         bPerfil.setBorder(null);
         bPerfil.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iPerfil.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bPerfil.setIcon(iDimAux);
         bPerfil.setHorizontalAlignment(SwingConstants.LEFT);
-        bPerfil.addActionListener(component);
+        bPerfil.addActionListener(navegacionUsuarioComponent);
+        bPerfil.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bPerfil);
-        
-        
-        bAmigos=sGraficos.crearJButton("      Amigos", 50, 110, 150, 30, null, Color.white,sRecursos.getcMano());
+
+        bAmigos = sGraficos.crearJButton("      Amigos", 35, 110, 180, 30, null, Color.white, sRecursos.getcMano());
         bAmigos.setBorder(null);
         bAmigos.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iAmigos.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bAmigos.setIcon(iDimAux);
         bAmigos.setHorizontalAlignment(SwingConstants.LEFT);
-        bAmigos.addActionListener(component);
+        bAmigos.addActionListener(navegacionUsuarioComponent);
+        bAmigos.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bAmigos);
-        
-        bProductos=sGraficos.crearJButton("      Productos", 50, 150, 150, 30, null, Color.white,sRecursos.getcMano());
+
+        bProductos = sGraficos.crearJButton("      Productos", 35, 150, 180, 30, null, Color.white, sRecursos.getcMano());
         bProductos.setBorder(null);
         bProductos.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iProductos.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bProductos.setIcon(iDimAux);
         bProductos.setHorizontalAlignment(SwingConstants.LEFT);
-        bProductos.addActionListener(component);
+        bProductos.addActionListener(navegacionUsuarioComponent);
+        bProductos.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bProductos);
-        
-        bConfiguracion=sGraficos.crearJButton("      Configuracion", 50, 190, 150, 30, null, Color.white,sRecursos.getcMano());
+
+        bConfiguracion = sGraficos.crearJButton("      Configuracion", 35, 190, 180, 30, null, Color.white, sRecursos.getcMano());
         bConfiguracion.setBorder(null);
         bConfiguracion.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iConfiguracion.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bConfiguracion.setIcon(iDimAux);
         bConfiguracion.setHorizontalAlignment(SwingConstants.LEFT);
-        bConfiguracion.addActionListener(component);
+        bConfiguracion.addActionListener(navegacionUsuarioComponent);
+        bConfiguracion.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bConfiguracion);
-        
-        bCerarSesion=sGraficos.crearJButton("      Cerrar Sesión", 50, 230, 150, 30, null, Color.white,sRecursos.getcMano());
+
+        bCerarSesion = sGraficos.crearJButton("      Cerrar Sesión", 35, 230, 180, 30, null, Color.white, sRecursos.getcMano());
         bCerarSesion.setBorder(null);
         bCerarSesion.setFont(sRecursos.getFontLigera());
-        iDimAux=new ImageIcon(
+        iDimAux = new ImageIcon(
                 iCerrarSesion.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
         );
         bCerarSesion.setIcon(iDimAux);
         bCerarSesion.setHorizontalAlignment(SwingConstants.LEFT);
-        bCerarSesion.addActionListener(component);
+        bCerarSesion.addActionListener(navegacionUsuarioComponent);
+        bCerarSesion.addMouseListener(navegacionUsuarioComponent);
         pInferior.add(bCerarSesion);
-        
-        
+
+    }
+
+    public JButton getBInicio() {
+        return this.bInicio;
+    }
+
+    public JButton getbInicio() {
+        return bInicio;
+    }
+
+    public JButton getbPerfil() {
+        return bPerfil;
+    }
+
+    public JButton getbAmigos() {
+        return bAmigos;
+    }
+
+    public JButton getbProductos() {
+        return bProductos;
+    }
+
+    public JButton getbConfiguracion() {
+        return bConfiguracion;
+    }
+
+    public JButton getbCerarSesion() {
+        return bCerarSesion;
+    }
+
+    public Border getbVacio() {
+        return bVacio;
     }
 
 }
