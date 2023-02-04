@@ -29,6 +29,16 @@ public class ObjGraficoService {
         return panel;
     }
 
+    public JPanel construirJPanel(int x, int y, int ancho, int alto, Color colorFondo, Border borde) {
+        JPanel panel = new JPanel();
+        panel.setLocation(x, y);
+        panel.setSize(ancho, alto);
+        panel.setLayout(null);
+        panel.setBackground(colorFondo);
+        panel.setBorder(borde);
+        return panel;
+    }
+
     public JLabel crearJLabel(String texto, Font fuente, int x, int y, int ancho, int alto, Color color) {
         JLabel label = new JLabel();
         label.setText(texto);
@@ -47,6 +57,46 @@ public class ObjGraficoService {
         );
         label.setIcon(iDimAux);
         label.setCursor(cursor);
+        return label;
+    }
+
+    public JLabel construirJLabel(
+            String texto, int x, int y, int ancho, int alto, Cursor cursor, ImageIcon imagen,
+            Font fuente, Color colorFondo, Color colorFuente, Border borde, String direccion
+    ) {
+        JLabel label = new JLabel(texto);
+        label.setLocation(x, y);
+        label.setSize(ancho, alto);
+        label.setForeground(colorFuente);
+        label.setFont(fuente);
+        label.setCursor(cursor);
+        label.setIcon(imagen);
+        label.setBorder(borde);
+        if (colorFondo != null) {
+            label.setOpaque(true);
+            label.setBackground(colorFondo);
+        }
+        switch (direccion) {
+            case "c":
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                break;
+            case "r":
+                label.setHorizontalAlignment(SwingConstants.RIGHT);
+                label.setHorizontalTextPosition(SwingConstants.LEFT);
+                break;
+            case "t":
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                label.setVerticalTextPosition(SwingConstants.TOP);
+                label.setHorizontalTextPosition(SwingConstants.CENTER);
+                break;
+            case "b":
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                label.setVerticalTextPosition(SwingConstants.BOTTOM);
+                label.setHorizontalTextPosition(SwingConstants.CENTER);
+                break;
+            default:
+                break;
+        }
         return label;
     }
 
@@ -92,7 +142,7 @@ public class ObjGraficoService {
         return campo;
     }
 
-    public JPasswordField crearJPasswordField(String placeholder, int x, int y , int ancho , int alto, Color fondo, Color carreta, Cursor cursor, Border borde) {
+    public JPasswordField crearJPasswordField(String placeholder, int x, int y, int ancho, int alto, Color fondo, Color carreta, Cursor cursor, Border borde) {
         JPasswordField pass = new JPasswordField();
         TextPrompt placeholderPass = new TextPrompt(placeholder, pass, TextPrompt.Show.FOCUS_LOST);
         placeholderPass.setHorizontalAlignment(SwingConstants.CENTER);
@@ -104,6 +154,6 @@ public class ObjGraficoService {
         pass.setHorizontalAlignment(SwingConstants.CENTER);
         pass.setCursor(cursor);
         pass.setBorder(borde);
-       return pass;
+        return pass;
     }
 }

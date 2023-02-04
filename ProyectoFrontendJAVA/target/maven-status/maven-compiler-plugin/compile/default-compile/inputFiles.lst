@@ -1,22 +1,26 @@
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\navegacionUsuario\NavegacionUsuarioComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\amigos\AmigosTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\inicio\InicioComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\productos\ProductosTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\app\App.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\login\TextPrompt.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\vistaPrincipal\VistaPrincipalTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\app\services\RecursosService.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\productos\ProductosComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\login\LoginComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\perfil\PerfilTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\amigos\AmigosComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\barraTitulo\BarraTituloTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\configuraciones\ConfiguracionesComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\inicio\InicioTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\navegacionUsuario\NavegacionUsuarioTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\vistaPrincipal\VistaPrincipalComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\barraTitulo\BarraTituloComponent.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\configuraciones\ConfiguracionesTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\login\LoginTemplate.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\app\services\ObjGraficoService.java
-C:\Users\matia\Documents\GITHUB\ProyectoFrontendJAVA\ProyectoFrontendJAVA\src\main\java\client\components\perfil\PerfilComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\app\services\ObjGraficoService.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\amigos\AmigosComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\amigos\AmigosTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\vistaPrincipal\VistaPrincipalTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\inicio\InicioComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\tarjeta\TarjetaComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\configuraciones\ConfiguracionesTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\accion\AccionTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\barraTitulo\BarraTituloComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\navegacionUsuario\NavegacionUsuarioComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\login\LoginTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\login\TextPrompt.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\perfil\PerfilComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\vistaPrincipal\VistaPrincipalComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\perfil\PerfilTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\productos\ProductosTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\accion\AccionComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\login\LoginComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\navegacionUsuario\NavegacionUsuarioTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\app\services\RecursosService.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\productos\ProductosComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\inicio\InicioTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\tarjeta\TarjetaTemplate.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\configuraciones\ConfiguracionesComponent.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\app\App.java
+D:\Documentos\GITHUB\ProyectoFrontendJAVA Swing\ProyectoFrontendJAVA\src\main\java\client\components\barraTitulo\BarraTituloTemplate.java

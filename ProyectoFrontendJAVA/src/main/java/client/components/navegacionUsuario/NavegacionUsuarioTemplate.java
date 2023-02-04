@@ -50,7 +50,7 @@ public class NavegacionUsuarioTemplate extends JPanel {
         this.iProductos = new ImageIcon("resources\\images\\productos.png");
         this.iConfiguracion = new ImageIcon("resources\\images\\configuracion.png");
         this.iCerrarSesion = new ImageIcon("resources\\images\\salir.png");
-        this.iImagenUsuario = new ImageIcon("resources\\images\\perfiles\\perfil1.png");
+        this.iImagenUsuario = new ImageIcon("resources\\images\\perfiles\\perfil1.jpeg");
         this.bVacio = new EmptyBorder(2, 20, 2, 2);
     }
 
